@@ -6,6 +6,19 @@ This is a personal practice project. The model exhibited severe overfitting due 
 - Training Time: 4.5h
 - Best Validation Dice: 84%
 
+## Reproduce
+Download the [Kvasir-SEG dataset](https://datasets.simula.no/kvasir-seg/) and extract it to the project's root directory.
+Ensure the directory structure is organized as follows:
+```text
+./Kvasir-SEG/
+├── images/
+└── masks/
+```
+
+Run the training script using `python3 train.py`
+**Note:** The training process will automatically log metrics using WandB
+
+
 ## Model Architecture
 - three-layer Convolutional Variational Autoencoder (VAE)
 - using **Squeeze-and-Excitation (SE)** modules at skip connections
@@ -15,13 +28,15 @@ This is a personal practice project. The model exhibited severe overfitting due 
 ## Results
 <table>
   <tr>
-    <td width="33%"><img src="/asserts/train_tatal_loss.png"></td>
-    <td width="33%"><img src="/asserts/train_dice_loss.png"></td>
-    <td width="33%"><img src="/asserts/train_bce_loss.png"></td>
+    <td width="50%"><img src="/asserts/train_tatal_loss.png"></td>
+    <td width="50%"><img src="/asserts/val_total_loss.png"></td>
   </tr>
   <tr>
-    <td width="33%"><img src="/asserts/val_total_loss.png"></td>
-    <td width="33%"><img src="/asserts/val_dice_loss.png"></td>
-    <td width="33%"><img src="/asserts/val_bce_loss.png"></td>
+    <td width="50%"><img src="/asserts/train_dice_loss.png"></td>
+    <td width="50%"><img src="/asserts/val_dice_loss.png"></td>
+  </tr>
+    <tr>
+    <td width="50%"><img src="/asserts/train_bce_loss.png"></td>
+    <td width="50%"><img src="/asserts/val_bce_loss.png"></td>
   </tr>
 </table>
